@@ -1,6 +1,6 @@
-﻿namespace Diary_pro.Myfrms
+﻿namespace Diary_pro
 {
-    partial class frmMemo
+    partial class frmMemoSearch
     {
         /// <summary>
         /// Required designer variable.
@@ -28,8 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnNewMemo = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.Memobox = new System.Windows.Forms.GroupBox();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
@@ -43,42 +42,41 @@
             this.toolStripButton13 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton12 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton11 = new System.Windows.Forms.ToolStripButton();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblMemoTitle = new System.Windows.Forms.Label();
-            this.txtMemoTitle = new System.Windows.Forms.TextBox();
             this.lblMemoDate = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.txtMemoDate = new System.Windows.Forms.TextBox();
-            this.fontDialog1 = new System.Windows.Forms.FontDialog();
-            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.Memobox = new System.Windows.Forms.GroupBox();
-            this.lblMemoID = new System.Windows.Forms.Label();
             this.txtMemoID = new System.Windows.Forms.TextBox();
-            this.btnReset = new System.Windows.Forms.Button();
-            this.toolStrip1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.lblMemoID = new System.Windows.Forms.Label();
+            this.txtMemoTitle = new System.Windows.Forms.TextBox();
+            this.lblMemoTitle = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.btnMemo = new System.Windows.Forms.Button();
             this.Memobox.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnNewMemo
+            // Memobox
             // 
-            this.btnNewMemo.Location = new System.Drawing.Point(3, 12);
-            this.btnNewMemo.Name = "btnNewMemo";
-            this.btnNewMemo.Size = new System.Drawing.Size(155, 37);
-            this.btnNewMemo.TabIndex = 0;
-            this.btnNewMemo.Text = "New Memo F2";
-            this.btnNewMemo.UseVisualStyleBackColor = true;
-            this.btnNewMemo.Click += new System.EventHandler(this.btnNewMemo_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(175, 12);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(118, 37);
-            this.btnSave.TabIndex = 1;
-            this.btnSave.Text = "Save F5";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.Memobox.Controls.Add(this.btnMemo);
+            this.Memobox.Controls.Add(this.toolStrip1);
+            this.Memobox.Controls.Add(this.lblMemoDate);
+            this.Memobox.Controls.Add(this.richTextBox1);
+            this.Memobox.Controls.Add(this.txtMemoDate);
+            this.Memobox.Controls.Add(this.txtMemoID);
+            this.Memobox.Controls.Add(this.lblMemoID);
+            this.Memobox.Controls.Add(this.txtMemoTitle);
+            this.Memobox.Controls.Add(this.lblMemoTitle);
+            this.Memobox.Location = new System.Drawing.Point(183, 12);
+            this.Memobox.Name = "Memobox";
+            this.Memobox.Size = new System.Drawing.Size(561, 440);
+            this.Memobox.TabIndex = 8;
+            this.Memobox.TabStop = false;
+            this.Memobox.Text = "Memobox";
             // 
             // toolStrip1
             // 
@@ -102,6 +100,7 @@
             this.toolStrip1.Size = new System.Drawing.Size(603, 25);
             this.toolStrip1.TabIndex = 2;
             this.toolStrip1.Text = "toolStrip1";
+            this.toolStrip1.Visible = false;
             // 
             // toolStripButton6
             // 
@@ -113,7 +112,6 @@
             this.toolStripButton6.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton6.Text = "toolStripButton1";
             this.toolStripButton6.ToolTipText = "Font";
-            this.toolStripButton6.Click += new System.EventHandler(this.toolStripButton6_Click);
             // 
             // toolStripButton5
             // 
@@ -125,7 +123,6 @@
             this.toolStripButton5.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton5.Text = "toolStripButton1";
             this.toolStripButton5.ToolTipText = "Fore Color";
-            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
             // toolStripButton4
             // 
@@ -137,7 +134,6 @@
             this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton4.Text = "toolStripButton1";
             this.toolStripButton4.ToolTipText = "BackGround Color";
-            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
             // toolStripButton3
             // 
@@ -149,7 +145,6 @@
             this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton3.Text = "toolStripButton1";
             this.toolStripButton3.ToolTipText = "Text Align Left";
-            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // toolStripButton2
             // 
@@ -161,7 +156,6 @@
             this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton2.Text = "toolStripButton1";
             this.toolStripButton2.ToolTipText = "Text Align Center";
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolStripButton10
             // 
@@ -173,7 +167,6 @@
             this.toolStripButton10.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton10.Text = "toolStripButton1";
             this.toolStripButton10.ToolTipText = "Text Align Right";
-            this.toolStripButton10.Click += new System.EventHandler(this.toolStripButton10_Click);
             // 
             // toolStripButton9
             // 
@@ -185,7 +178,6 @@
             this.toolStripButton9.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton9.Text = "toolStripButton1";
             this.toolStripButton9.ToolTipText = "Left Indent";
-            this.toolStripButton9.Click += new System.EventHandler(this.toolStripButton9_Click);
             // 
             // toolStripButton8
             // 
@@ -197,7 +189,6 @@
             this.toolStripButton8.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton8.Text = "toolStripButton1";
             this.toolStripButton8.ToolTipText = "Right Indent";
-            this.toolStripButton8.Click += new System.EventHandler(this.toolStripButton8_Click);
             // 
             // toolStripButton7
             // 
@@ -209,7 +200,6 @@
             this.toolStripButton7.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton7.Text = "toolStripButton1";
             this.toolStripButton7.ToolTipText = "Copy";
-            this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
             // 
             // toolStripButton13
             // 
@@ -221,7 +211,6 @@
             this.toolStripButton13.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton13.Text = "toolStripButton1";
             this.toolStripButton13.ToolTipText = "Paste";
-            this.toolStripButton13.Click += new System.EventHandler(this.toolStripButton13_Click);
             // 
             // toolStripButton12
             // 
@@ -233,7 +222,6 @@
             this.toolStripButton12.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton12.Text = "toolStripButton1";
             this.toolStripButton12.ToolTipText = "Undo";
-            this.toolStripButton12.Click += new System.EventHandler(this.toolStripButton12_Click);
             // 
             // toolStripButton11
             // 
@@ -245,137 +233,152 @@
             this.toolStripButton11.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton11.Text = "toolStripButton1";
             this.toolStripButton11.ToolTipText = "Redo";
-            this.toolStripButton11.Click += new System.EventHandler(this.toolStripButton11_Click);
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(12, 161);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(603, 255);
-            this.richTextBox1.TabIndex = 3;
-            this.richTextBox1.Text = "";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnReset);
-            this.panel1.Controls.Add(this.btnNewMemo);
-            this.panel1.Controls.Add(this.btnSave);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(656, 62);
-            this.panel1.TabIndex = 4;
-            // 
-            // lblMemoTitle
-            // 
-            this.lblMemoTitle.AutoSize = true;
-            this.lblMemoTitle.Location = new System.Drawing.Point(209, 66);
-            this.lblMemoTitle.Name = "lblMemoTitle";
-            this.lblMemoTitle.Size = new System.Drawing.Size(62, 13);
-            this.lblMemoTitle.TabIndex = 2;
-            this.lblMemoTitle.Text = "Memo Title:";
-            // 
-            // txtMemoTitle
-            // 
-            this.txtMemoTitle.Location = new System.Drawing.Point(279, 63);
-            this.txtMemoTitle.Name = "txtMemoTitle";
-            this.txtMemoTitle.Size = new System.Drawing.Size(277, 20);
-            this.txtMemoTitle.TabIndex = 3;
             // 
             // lblMemoDate
             // 
             this.lblMemoDate.AutoSize = true;
-            this.lblMemoDate.Location = new System.Drawing.Point(208, 92);
+            this.lblMemoDate.Location = new System.Drawing.Point(151, 142);
             this.lblMemoDate.Name = "lblMemoDate";
             this.lblMemoDate.Size = new System.Drawing.Size(65, 13);
             this.lblMemoDate.TabIndex = 5;
             this.lblMemoDate.Text = "Memo Date:";
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(6, 169);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(550, 265);
+            this.richTextBox1.TabIndex = 3;
+            this.richTextBox1.Text = "";
+            // 
             // txtMemoDate
             // 
-            this.txtMemoDate.Location = new System.Drawing.Point(279, 89);
+            this.txtMemoDate.Location = new System.Drawing.Point(222, 139);
             this.txtMemoDate.Name = "txtMemoDate";
             this.txtMemoDate.Size = new System.Drawing.Size(277, 20);
             this.txtMemoDate.TabIndex = 6;
             // 
-            // Memobox
+            // txtMemoID
             // 
-            this.Memobox.Controls.Add(this.toolStrip1);
-            this.Memobox.Controls.Add(this.lblMemoDate);
-            this.Memobox.Controls.Add(this.richTextBox1);
-            this.Memobox.Controls.Add(this.txtMemoDate);
-            this.Memobox.Controls.Add(this.txtMemoID);
-            this.Memobox.Controls.Add(this.lblMemoID);
-            this.Memobox.Controls.Add(this.txtMemoTitle);
-            this.Memobox.Controls.Add(this.lblMemoTitle);
-            this.Memobox.Location = new System.Drawing.Point(0, 68);
-            this.Memobox.Name = "Memobox";
-            this.Memobox.Size = new System.Drawing.Size(656, 440);
-            this.Memobox.TabIndex = 7;
-            this.Memobox.TabStop = false;
-            this.Memobox.Text = "Memobox";
+            this.txtMemoID.Location = new System.Drawing.Point(222, 87);
+            this.txtMemoID.Name = "txtMemoID";
+            this.txtMemoID.Size = new System.Drawing.Size(75, 20);
+            this.txtMemoID.TabIndex = 3;
             // 
             // lblMemoID
             // 
             this.lblMemoID.AutoSize = true;
-            this.lblMemoID.Location = new System.Drawing.Point(214, 40);
+            this.lblMemoID.Location = new System.Drawing.Point(157, 90);
             this.lblMemoID.Name = "lblMemoID";
             this.lblMemoID.Size = new System.Drawing.Size(53, 13);
             this.lblMemoID.TabIndex = 2;
             this.lblMemoID.Text = "Memo ID:";
             // 
-            // txtMemoID
+            // txtMemoTitle
             // 
-            this.txtMemoID.Location = new System.Drawing.Point(279, 37);
-            this.txtMemoID.Name = "txtMemoID";
-            this.txtMemoID.Size = new System.Drawing.Size(75, 20);
-            this.txtMemoID.TabIndex = 3;
+            this.txtMemoTitle.Location = new System.Drawing.Point(222, 113);
+            this.txtMemoTitle.Name = "txtMemoTitle";
+            this.txtMemoTitle.Size = new System.Drawing.Size(277, 20);
+            this.txtMemoTitle.TabIndex = 3;
             // 
-            // btnReset
+            // lblMemoTitle
             // 
-            this.btnReset.Location = new System.Drawing.Point(336, 19);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(75, 23);
-            this.btnReset.TabIndex = 2;
-            this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            this.lblMemoTitle.AutoSize = true;
+            this.lblMemoTitle.Location = new System.Drawing.Point(152, 116);
+            this.lblMemoTitle.Name = "lblMemoTitle";
+            this.lblMemoTitle.Size = new System.Drawing.Size(62, 13);
+            this.lblMemoTitle.TabIndex = 2;
+            this.lblMemoTitle.Text = "Memo Title:";
             // 
-            // frmMemo
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox1.Controls.Add(this.btnSearch);
+            this.groupBox1.Controls.Add(this.listBox1);
+            this.groupBox1.Controls.Add(this.txtSearch);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(165, 440);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(6, 169);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(153, 264);
+            this.listBox1.TabIndex = 0;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(5, 146);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(21, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "ID:";
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(32, 143);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(39, 20);
+            this.txtSearch.TabIndex = 3;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(77, 143);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 4;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // btnMemo
+            // 
+            this.btnMemo.Location = new System.Drawing.Point(346, 85);
+            this.btnMemo.Name = "btnMemo";
+            this.btnMemo.Size = new System.Drawing.Size(75, 23);
+            this.btnMemo.TabIndex = 9;
+            this.btnMemo.Text = "Memo";
+            this.btnMemo.UseVisualStyleBackColor = true;
+            this.btnMemo.Click += new System.EventHandler(this.btnMemo_Click);
+            // 
+            // frmMemoSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(656, 508);
+            this.BackColor = System.Drawing.Color.LightCyan;
+            this.ClientSize = new System.Drawing.Size(756, 461);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Memobox);
-            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmMemo";
+            this.Name = "frmMemoSearch";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmMemo";
-            this.Load += new System.EventHandler(this.frmMemo_Load);
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
-            this.panel1.ResumeLayout(false);
+            this.Text = "Memo Search";
+            this.Load += new System.EventHandler(this.frmMemoSearch_Load);
             this.Memobox.ResumeLayout(false);
             this.Memobox.PerformLayout();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnNewMemo;
-        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.GroupBox Memobox;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lblMemoTitle;
-        private System.Windows.Forms.TextBox txtMemoTitle;
-        private System.Windows.Forms.Label lblMemoDate;
-        private System.Windows.Forms.TextBox txtMemoDate;
         private System.Windows.Forms.ToolStripButton toolStripButton6;
         private System.Windows.Forms.ToolStripButton toolStripButton5;
         private System.Windows.Forms.ToolStripButton toolStripButton4;
@@ -388,11 +391,18 @@
         private System.Windows.Forms.ToolStripButton toolStripButton13;
         private System.Windows.Forms.ToolStripButton toolStripButton12;
         private System.Windows.Forms.ToolStripButton toolStripButton11;
-        private System.Windows.Forms.FontDialog fontDialog1;
-        private System.Windows.Forms.ColorDialog colorDialog1;
-        private System.Windows.Forms.GroupBox Memobox;
+        private System.Windows.Forms.Label lblMemoDate;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.TextBox txtMemoDate;
         private System.Windows.Forms.TextBox txtMemoID;
         private System.Windows.Forms.Label lblMemoID;
-        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.TextBox txtMemoTitle;
+        private System.Windows.Forms.Label lblMemoTitle;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnMemo;
     }
 }

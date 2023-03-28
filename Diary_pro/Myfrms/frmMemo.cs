@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -95,6 +96,14 @@ namespace Diary_pro.Myfrms
             Memobox.Enabled= true;
             btnSave.Enabled= true;
             btnNewMemo.Enabled = false;
+            int start = Properties.Settings.Default.lastmemo_id +1;
+            txtMemoID.Text =start.ToString();
+
+            txtMemoTitle.Text = "";
+            txtMemoDate.Text = "";
+            richTextBox1.Text = "";
+
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -111,9 +120,16 @@ namespace Diary_pro.Myfrms
             Properties.Settings.Default.lastmemo_id = last_id;
             Properties.Settings.Default.Save();
                 
-            string filePath = "\\data\\docs\\";
-            string fileType = ".rtf";
+           
             string fileName = Application.StartupPath + "\\data\\docs\\" + last_id.ToString() + ".rtf";
+            string fileName_title = Application.StartupPath + "\\data\\docs\\title_" + last_id.ToString() + ".rtf";
+            string fileName_date = Application.StartupPath + "\\data\\docs\\date_" + last_id.ToString() + ".rtf";
+
+            File.WriteAllText(fileName_title, txtMemoTitle.Text, Encoding.UTF8);
+            File.WriteAllText(fileName_date, txtMemoDate.Text, Encoding.UTF8);
+
+
+
 
             richTextBox1.SaveFile(fileName);
             MessageBox.Show("Your Memo is saved!");
@@ -125,6 +141,12 @@ namespace Diary_pro.Myfrms
         {
             Memobox.Enabled = false;
             btnSave.Enabled = false;
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.lastmemo_id = 0;
+            Properties.Settings.Default.Save();
         }
     }
 }

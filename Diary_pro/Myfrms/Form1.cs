@@ -202,5 +202,41 @@ namespace Diary_pro
             Myfrms.frmMemo memo = new Myfrms.frmMemo(); 
             memo.Show();
         }
+
+        private void tsbtnSearch_Click(object sender, EventArgs e)
+        {
+            Diary_pro.frmMemoSearch memoSearch = new Diary_pro.frmMemoSearch();
+            memoSearch.Show();
+        }
+
+        private void LashonsDiary_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F2)
+            {
+                tsbtnAddMemo_Click(sender, e);
+            }
+            if (e.KeyCode == Keys.F3)
+            {
+                tsbtnSearch_Click(sender, e);
+            }
+            if (e.KeyCode == Keys.F4)
+            {
+                tsbtnAddMemo_Click(sender, e);
+            }
+            if (e.KeyCode == Keys.F5)
+            {
+                tsbtnAddMemo_Click(sender, e);
+            }
+            if (e.KeyCode == Keys.F6)
+            {
+                tsbtnAddMemo_Click(sender, e);
+            }
+
+        }
+
+        private void tsbtnSettings_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

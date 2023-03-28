@@ -81,6 +81,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Myfrms\frmMemoSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Myfrms\frmMemoSearch.Designer.cs">
+      <DependentUpon>frmMemoSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="Myfrms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Myfrms\frmMemo.resx">
       <DependentUpon>frmMemo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Myfrms\frmMemoSearch.resx">
+      <DependentUpon>frmMemoSearch.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Myfrms\frmUserMang.resx">
       <DependentUpon>frmUserMang.cs</DependentUpon>

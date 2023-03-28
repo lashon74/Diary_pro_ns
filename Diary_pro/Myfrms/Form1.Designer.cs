@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LashonsDiary));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lblUserName = new System.Windows.Forms.Label();
             this.lblTimer = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dropdownBackground = new System.Windows.Forms.ComboBox();
@@ -39,9 +42,6 @@
             this.lblVersion = new System.Windows.Forms.Label();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.lblUserName = new System.Windows.Forms.Label();
-            this.lblName = new System.Windows.Forms.Label();
             this.lockCM = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.lockApplicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.refreshToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,9 +64,9 @@
             this.lblYear2 = new System.Windows.Forms.Label();
             this.btnShowDsk = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.toolStrip1.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.lockCM.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ImageBox2)).BeginInit();
             this.panel3.SuspendLayout();
@@ -84,6 +84,37 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 572);
             this.panel1.TabIndex = 0;
+            // 
+            // panel4
+            // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.lblName);
+            this.panel4.Controls.Add(this.lblUserName);
+            this.panel4.Controls.Add(this.ImageBox2);
+            this.panel4.Location = new System.Drawing.Point(-1, 233);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(200, 147);
+            this.panel4.TabIndex = 3;
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.Location = new System.Drawing.Point(94, 122);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(14, 18);
+            this.lblName.TabIndex = 2;
+            this.lblName.Text = "-";
+            // 
+            // lblUserName
+            // 
+            this.lblUserName.AutoSize = true;
+            this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUserName.Location = new System.Drawing.Point(3, 122);
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.Size = new System.Drawing.Size(79, 16);
+            this.lblUserName.TabIndex = 1;
+            this.lblUserName.Text = "User Name:";
             // 
             // lblTimer
             // 
@@ -172,37 +203,6 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // panel4
-            // 
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.lblName);
-            this.panel4.Controls.Add(this.lblUserName);
-            this.panel4.Controls.Add(this.ImageBox2);
-            this.panel4.Location = new System.Drawing.Point(-1, 233);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(200, 147);
-            this.panel4.TabIndex = 3;
-            // 
-            // lblUserName
-            // 
-            this.lblUserName.AutoSize = true;
-            this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserName.Location = new System.Drawing.Point(3, 122);
-            this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(79, 16);
-            this.lblUserName.TabIndex = 1;
-            this.lblUserName.Text = "User Name:";
-            // 
-            // lblName
-            // 
-            this.lblName.AutoSize = true;
-            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(94, 122);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(14, 18);
-            this.lblName.TabIndex = 2;
-            this.lblName.Text = "-";
-            // 
             // lockCM
             // 
             this.lockCM.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -256,8 +256,8 @@
             this.tsbtnAddMemo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tsbtnAddMemo.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtnAddMemo.Name = "tsbtnAddMemo";
-            this.tsbtnAddMemo.Size = new System.Drawing.Size(80, 57);
-            this.tsbtnAddMemo.Text = "Add Memo";
+            this.tsbtnAddMemo.Size = new System.Drawing.Size(110, 57);
+            this.tsbtnAddMemo.Text = "Add Memo F2";
             this.tsbtnAddMemo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tsbtnAddMemo.Click += new System.EventHandler(this.tsbtnAddMemo_Click);
             // 
@@ -268,9 +268,10 @@
             this.tsbtnSearch.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tsbtnSearch.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtnSearch.Name = "tsbtnSearch";
-            this.tsbtnSearch.Size = new System.Drawing.Size(80, 57);
-            this.tsbtnSearch.Text = "Search Memo";
+            this.tsbtnSearch.Size = new System.Drawing.Size(110, 57);
+            this.tsbtnSearch.Text = "Search Memo F3";
             this.tsbtnSearch.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbtnSearch.Click += new System.EventHandler(this.tsbtnSearch_Click);
             // 
             // tsbtnSettings
             // 
@@ -281,14 +282,15 @@
             this.tsbtnSettings.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tsbtnSettings.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtnSettings.Name = "tsbtnSettings";
-            this.tsbtnSettings.Size = new System.Drawing.Size(80, 57);
-            this.tsbtnSettings.Text = "Settings";
+            this.tsbtnSettings.Size = new System.Drawing.Size(110, 57);
+            this.tsbtnSettings.Text = "Settings F4";
             this.tsbtnSettings.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.tsbtnSettings.Click += new System.EventHandler(this.tsbtnSettings_Click);
             // 
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.settingsToolStripMenuItem.Text = "Settings";
             // 
             // tsbtnTools
@@ -300,14 +302,14 @@
             this.tsbtnTools.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tsbtnTools.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtnTools.Name = "tsbtnTools";
-            this.tsbtnTools.Size = new System.Drawing.Size(80, 57);
-            this.tsbtnTools.Text = "Tools";
+            this.tsbtnTools.Size = new System.Drawing.Size(110, 57);
+            this.tsbtnTools.Text = "Tools F5";
             this.tsbtnTools.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // usersToolStripMenuItem
             // 
             this.usersToolStripMenuItem.Name = "usersToolStripMenuItem";
-            this.usersToolStripMenuItem.Size = new System.Drawing.Size(102, 22);
+            this.usersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.usersToolStripMenuItem.Text = "Users";
             this.usersToolStripMenuItem.Click += new System.EventHandler(this.usersToolStripMenuItem_Click);
             // 
@@ -321,20 +323,20 @@
             this.tsbtnAbout.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.tsbtnAbout.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.tsbtnAbout.Name = "tsbtnAbout";
-            this.tsbtnAbout.Size = new System.Drawing.Size(80, 57);
-            this.tsbtnAbout.Text = "About";
+            this.tsbtnAbout.Size = new System.Drawing.Size(110, 57);
+            this.tsbtnAbout.Text = "About F6";
             this.tsbtnAbout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // helpToolStripMenuItem1
             // 
             this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
-            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(123, 22);
+            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.helpToolStripMenuItem1.Text = "Help";
             // 
             // aboutUsToolStripMenuItem1
             // 
             this.aboutUsToolStripMenuItem1.Name = "aboutUsToolStripMenuItem1";
-            this.aboutUsToolStripMenuItem1.Size = new System.Drawing.Size(123, 22);
+            this.aboutUsToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.aboutUsToolStripMenuItem1.Text = "About Us";
             this.aboutUsToolStripMenuItem1.Click += new System.EventHandler(this.aboutUsToolStripMenuItem1_Click);
             // 
@@ -442,12 +444,13 @@
             this.Text = "Lashons Diary";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.LashonsDiary_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LashonsDiary_KeyDown);
             this.panel1.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.lockCM.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ImageBox2)).EndInit();
             this.panel3.ResumeLayout(false);
